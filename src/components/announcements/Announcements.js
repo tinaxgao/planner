@@ -5,8 +5,7 @@ import { add, remove } from "./announcementsSlice";
 const Announcements = () => {
   const announcements = useSelector((state) => state.announcements);
   const announcement = announcements.announcements.map((a) => (
-    <div className="announcement">
-      {a.id}
+    <div key={a.id} className="announcement">
       <p>{a.content}</p>
       {a.date}
       <button onClick={() => dispatch(remove(a))}>x</button>
