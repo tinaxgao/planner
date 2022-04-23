@@ -20,3 +20,12 @@
 .App-link {
   color: #61dafb;
 }
+
+section {
+  border: 1px solid grey;
+  margin: 10px;
+}
+
+div {
+  border: 1px dashed #61dafb;
+}

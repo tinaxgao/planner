@@ -6,6 +6,11 @@ const initialState = {
             id: 1,
             content: "mask requirements",
             date: "04/23/22",
+        }, 
+        {
+            id: 2,
+            content: "hours change",
+            date: "04/23/22",
         }
     ],
 };

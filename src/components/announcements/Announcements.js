@@ -1,12 +1,21 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { add, remove } from "./announcementsSlice";
+import { add, remove } from "./announcementsSlice";
 
 const Announcements = () => {
   const announcements = useSelector((state) => state.announcements);
-  const announcement = announcements.announcements.map((a) => <p>{a.content}</p>);
-  console.log(announcement);
-  // const dispatch = useDispatch();
+  const announcement = announcements.announcements.map((a) => (
+    <div className="announcement">
+      {a.id}
+      <p>{a.content}</p>
+      {a.date}
+      <button onClick={() => dispatch(remove(a))}>x</button>
+    </div>
+  ));
+
+  console.log(announcements.announcements.map((i) => i)); //DELETE console.log
+
+  const dispatch = useDispatch();
 
   return <div>{announcement}</div>;
 };
