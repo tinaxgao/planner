@@ -23,7 +23,7 @@ export const announcementsSlice = createSlice({
             state.announcements.push({
                 id: state.announcements.length + 1,
                 content: action.payload,
-                date: new Date(),
+                date: new Date().toLocaleDateString(),
             });
         },
         remove: (state, action) => {

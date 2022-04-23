@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { add, remove } from "./announcementsSlice";
 
 const Announcements = () => {
+  const dispatch = useDispatch();
+
   const announcements = useSelector((state) => state.announcements);
   const announcement = announcements.announcements.map((a) => (
     <div key={a.id} className="announcement">
@@ -12,11 +14,22 @@ const Announcements = () => {
     </div>
   ));
 
-  console.log(announcements.announcements.map((i) => i)); //DELETE console.log
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(add(document.getElementById("newAnnounce").value))
+  }
 
-  const dispatch = useDispatch();
+  return (
+    <div>
+      {announcement}
 
-  return <div>{announcement}</div>;
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="newAnnounce">Add announcement</label>
+        <input type="text" id="newAnnounce" />
+        <button type="submit">+</button>
+      </form>
+    </div>
+  );
 };
 
 export default Announcements;
