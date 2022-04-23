@@ -1,4 +1,5 @@
 import "./App.css";
+import Announcements from "./components/announcements/Announcements";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
         <h1>Dashboard</h1>
       </header>
       <body>
-      <section>Announcements</section>
+      <Announcements/>
       <section>Checklist</section>
       <section>Shopping List</section>
       </body>
