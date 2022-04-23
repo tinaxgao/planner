@@ -7,8 +7,9 @@ function App() {
         <h1>Dashboard</h1>
       </header>
       <body>
-      <p>Announcements</p>
-      <p>Checklist</p>
+      <section>Announcements</section>
+      <section>Checklist</section>
+      <section>Shopping List</section>
       </body>
     </div>
   );
