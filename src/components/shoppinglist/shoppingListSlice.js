@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 // The initial state of the shopping list
 const initialState = {
     shoppingList: [
-        { id: 1, name: "Coconut Milk", quantity: "1" },
-        { id: 2, name: "Almonds", quantity: "2" },
-        { id: 3, name: "Baguettes", quantity: "3" },
-        { id: 4, name: "Cream Cheese", quantity: "4" },
-        { id: 5, name: "Earth Balance", quantity: "5" },
+        { id: 1, content: "Coconut Milk", quantity: "1" },
+        { id: 2, content: "Almonds", quantity: "2" },
+        { id: 3, content: "Baguettes", quantity: "3" },
+        { id: 4, content: "Cream Cheese", quantity: "4" },
+        { id: 5, content: "Earth Balance", quantity: "5" },
     ],
 };
 
@@ -19,7 +19,7 @@ const shoppingListSlice = createSlice({
         addItem: (state, action) => {
             state.shoppingList.push({
                 id: state.shoppingList.length + 1,
-                name: action.payload.name,
+                content: action.payload.content,
                 quantity: action.payload.quantity,
             });
         },

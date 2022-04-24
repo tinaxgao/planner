@@ -5,7 +5,7 @@ import { addTask } from "./checklistSlice";
 const AddChecklistTask = () => {
   const dispatch = useDispatch();
 
-  // Add new announcement from form
+  // Add new task from form
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addTask(document.getElementById("newTask").value));
