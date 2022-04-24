@@ -4,6 +4,7 @@ import { add } from "./announcementsSlice";
 
 const AddAnnouncement = () => {
     const dispatch = useDispatch();
+    
   // Add new announcement from form
   const handleSubmit = (e) => {
     e.preventDefault();

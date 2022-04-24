@@ -1,0 +1,26 @@
+import React from "react";
+import { useDispatch } from "react-redux";
+import { add } from "./checklistSlice";
+
+const AddChecklistTask = () => {
+  const dispatch = useDispatch();
+
+  // Add new announcement from form
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(add(document.getElementById("newTask").value));
+    document.getElementById("newTask").value = "";
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="newTask">Add task</label>
+        <input type="text" id="newTask" />
+        <button type="submit">+</button>
+      </form>
+    </div>
+  );
+};
+
+export default AddChecklistTask;

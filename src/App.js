@@ -1,5 +1,6 @@
 import "./App.css";
 import Announcements from "./components/announcements/Announcements";
+import Checklist from "./components/checklist/Checklist";
 
 function App() {
   return (
@@ -8,8 +9,8 @@ function App() {
         <h1>Dashboard</h1>
       </header>
       
-      <section><Announcements/></section>
-      <section>Checklist</section>
+      <section><Announcements /></section>
+      <section><Checklist /></section>
       <section>Shopping List</section>
       
     </div>
