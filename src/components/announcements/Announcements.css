@@ -1,0 +1,26 @@
+.announcement {
+    background-color: #F68373;
+    color: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .announcement div {
+    width: 100%;
+    display: flex;
+  }
+  
+  .announcement p {
+    width: 100%;
+  }
+  
+  .announcement button {
+    margin-left: auto;
+  }
+  
+  #announce-date {
+    width: 70%;
+  }
