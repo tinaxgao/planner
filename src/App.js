@@ -9,8 +9,9 @@ function App() {
         <h1>Dashboard</h1>
       </header>
       
-      <section><Announcements /></section>
-      <section><Checklist /></section>
+      <section>
+        <h2>Announcements</h2><Announcements /></section>
+      <section><h2>Checklist</h2><Checklist /></section>
       <section>Shopping List</section>
       
     </div>

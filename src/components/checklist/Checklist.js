@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { remove } from "./checklistSlice";
+import { removeTask } from "./checklistSlice";
 import AddChecklistTask from "./AddChecklistTask";
 
 const Checklist = () => {
@@ -11,7 +11,7 @@ const Checklist = () => {
     <div key={a.id} className="tasks">
       <p>{a.content}</p>
       {a.date}
-      <button onClick={() => dispatch(remove(a))}>x</button>
+      <button onClick={() => dispatch(removeTask(a))}>x</button>
     </div>
   ));
 

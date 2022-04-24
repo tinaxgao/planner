@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { remove } from "./announcementsSlice";
+import { removeAnnouncement } from "./announcementsSlice";
 import AddAnnouncement from "./AddAnnouncement.js";
 
 const Announcements = () => {
@@ -11,7 +11,7 @@ const Announcements = () => {
     <div key={a.id} className="announcement">
       <p>{a.content}</p>
       {a.date}
-      <button onClick={() => dispatch(remove(a))}>x</button>
+      <button onClick={() => dispatch(removeAnnouncement(a))}>x</button>
     </div>
   ));
 

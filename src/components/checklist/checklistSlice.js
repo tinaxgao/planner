@@ -17,13 +17,13 @@ export const checklistSlice = createSlice({
   name: "checklist",
   initialState,
   reducers: {
-    add: (state, action) => {
+    addTask: (state, action) => {
       state.checklist.push({
         id: state.checklist.length + 1,
         content: action.payload
       });
     },
-    remove: (state, action) => {
+    removeTask: (state, action) => {
       state.checklist = state.checklist.filter(
         (a) => a.id !== action.payload.id
       );
@@ -31,6 +31,6 @@ export const checklistSlice = createSlice({
   },
 });
 
-export const { add, remove } = checklistSlice.actions;
+export const { addTask, removeTask } = checklistSlice.actions;
 
 export default checklistSlice.reducer;

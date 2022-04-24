@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { add } from "./announcementsSlice";
+import { addAnnouncement } from "./announcementsSlice";
 
 const AddAnnouncement = () => {
     const dispatch = useDispatch();
@@ -8,7 +8,7 @@ const AddAnnouncement = () => {
   // Add new announcement from form
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(add(document.getElementById("newAnnounce").value));
+    dispatch(addAnnouncement(document.getElementById("newAnnounce").value));
     document.getElementById("newAnnounce").value = "";
   };
 

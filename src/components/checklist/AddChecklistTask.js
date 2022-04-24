@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { add } from "./checklistSlice";
+import { addTask } from "./checklistSlice";
 
 const AddChecklistTask = () => {
   const dispatch = useDispatch();
@@ -8,7 +8,7 @@ const AddChecklistTask = () => {
   // Add new announcement from form
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(add(document.getElementById("newTask").value));
+    dispatch(addTask(document.getElementById("newTask").value));
     document.getElementById("newTask").value = "";
   };
 

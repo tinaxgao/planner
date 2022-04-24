@@ -19,14 +19,14 @@ export const announcementsSlice = createSlice({
   name: "announcements",
   initialState,
   reducers: {
-    add: (state, action) => {
+    addAnnouncement: (state, action) => {
       state.announcements.push({
         id: state.announcements.length + 1,
         content: action.payload,
         date: new Date().toLocaleDateString(),
       });
     },
-    remove: (state, action) => {
+    removeAnnouncement: (state, action) => {
       state.announcements = state.announcements.filter(
         (a) => a.id !== action.payload.id
       );
@@ -34,6 +34,6 @@ export const announcementsSlice = createSlice({
   },
 });
 
-export const { add, remove } = announcementsSlice.actions;
+export const { addAnnouncement, removeAnnouncement } = announcementsSlice.actions;
 
 export default announcementsSlice.reducer;
