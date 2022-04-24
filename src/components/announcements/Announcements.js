@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { add, remove } from "./announcementsSlice";
+import { remove } from "./announcementsSlice";
+import AddAnnouncement from "./AddAnnouncement.js";
 
 const Announcements = () => {
   const dispatch = useDispatch();
@@ -14,20 +15,11 @@ const Announcements = () => {
     </div>
   ));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(add(document.getElementById("newAnnounce").value))
-  }
-
   return (
     <div>
       {announcement}
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="newAnnounce">Add announcement</label>
-        <input type="text" id="newAnnounce" />
-        <button type="submit">+</button>
-      </form>
+      <AddAnnouncement />
     </div>
   );
 };
