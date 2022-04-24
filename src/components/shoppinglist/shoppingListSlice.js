@@ -6,8 +6,8 @@ const initialState = {
         { id: 1, content: "Coconut Milk", quantity: "1" },
         { id: 2, content: "Almonds", quantity: "2" },
         { id: 3, content: "Baguettes", quantity: "3" },
-        { id: 4, content: "Cream Cheese", quantity: "4" },
-        { id: 5, content: "Earth Balance", quantity: "5" },
+        { id: 4, content: "Artichokes", quantity: "4" },
+        { id: 5, content: "Tomatoes", quantity: "5" },
     ],
 };
 
