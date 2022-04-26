@@ -1,4 +1,5 @@
 import React from "react";
+import "./Checklist.css";
 import { useDispatch } from "react-redux";
 import { addTask } from "./checklistSlice";
 
@@ -17,7 +18,7 @@ const AddChecklistTask = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="newTask">Add task</label>
         <input type="text" id="newTask" />
-        <button type="submit">+</button>
+        <button id="btn-formsubmit" type="submit"></button>
       </form>
     </div>
   );

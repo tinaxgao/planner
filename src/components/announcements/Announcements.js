@@ -21,8 +21,6 @@ const Announcements = () => {
   return (
     <div>
       {announcement}
-
-      <AddAnnouncement />
     </div>
   );
 };

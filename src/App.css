@@ -13,11 +13,51 @@
 
 section {
   border: .5px solid #8c8c8c;
-  border-radius: 15px;
-  margin: 10px;
+  border-radius: 25px;
+  margin: 30px 20px 20px;
 }
 
 div {
-  border: 1px dashed #61dafb;
+  /* border: 1px dashed #61dafb; */
 }
 
+/* label above each task or item */
+.toplabel {
+  width: 100%;
+  color: #8c8c8c;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* shared form stuff ---- */
+label {
+  color: #8c8c8c;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+#btn-formsubmit {
+    height: 25px;
+    width: 25px;
+    background-image: url(../public/icons/pencil.svg);
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
+/* ---- end shared form stuff */
