@@ -10,8 +10,8 @@ const Checklist = () => {
   const tasks = useSelector((state) => state.checklist);
   const task = tasks.checklist.map((a) => (
     <div key={a.id} className="task">
-      <div className="toplabel">Task</div>
-      <p>{a.content}</p>
+      <label className="toplabel">Task</label>
+      <h3>{a.content}</h3>
       <button onClick={() => dispatch(removeTask(a))}>x</button>
     </div>
   ));

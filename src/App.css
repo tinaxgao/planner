@@ -28,14 +28,17 @@ div {
   color: #8c8c8c;
   text-transform: uppercase;
   text-align: left;
+  font-weight: 400;
+  font-size: .85rem;
 }
 
 /* shared form stuff ---- */
-label {
+.formLabel {
   color: #8c8c8c;
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  font-size: .85rem;
 }
 
 form {
@@ -52,7 +55,7 @@ input {
   border-bottom: 2px solid black;
   padding: 10px;
   margin-bottom: 10px;
-  font-size: 1.2em;
+  font-size: 1.25rem;
 }
 
 input[type=text]:focus {

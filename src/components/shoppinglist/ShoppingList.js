@@ -12,8 +12,7 @@ const Checklist = () => {
     <div key={a.id} className="items">
       <div id="col1">
         <div className="toplabel">Item</div>
-        <p>{a.content}</p> 
-        {/* do I really need this wrapped in p? */}
+        {a.content}
       </div>
       <div id="col2">
         <div className="toplabel">Qty</div>
