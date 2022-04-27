@@ -5,6 +5,15 @@
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 2px solid green; */
+}
+
+.task p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* border: 2px red solid; */
+    max-width: 90%;
 }
 
 /* task completed button */
