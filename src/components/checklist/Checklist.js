@@ -17,7 +17,7 @@ const Checklist = () => {
   ));
 
   return (
-    <div id="checklist">
+    <div>
       {task}
 
       <AddChecklistTask />

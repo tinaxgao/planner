@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem } from "./shoppingListSlice";
 import AddShoppingListItem from "./AddShoppingListItem";
+import ".//ShoppingList.css";
 
 const Checklist = () => {
   const dispatch = useDispatch();
@@ -9,8 +10,15 @@ const Checklist = () => {
   const items = useSelector((state) => state.shoppingList);
   const item = items.shoppingList.map((a) => (
     <div key={a.id} className="items">
-      <p>{a.content}</p>
-      Quantity {a.quantity}
+      <div id="col1">
+        <div className="toplabel">Item</div>
+        <p>{a.content}</p> 
+        {/* do I really need this wrapped in p? */}
+      </div>
+      <div id="col2">
+        <div className="toplabel">Qty</div>
+        {a.quantity}
+      </div>
       <button onClick={() => dispatch(removeItem(a))}>x</button>
     </div>
   ));

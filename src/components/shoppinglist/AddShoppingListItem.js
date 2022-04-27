@@ -21,6 +21,7 @@ const AddShoppingListItem = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+      <label>Add item</label>
         <input
           type="text"
           id="itemContent"
@@ -37,7 +38,7 @@ const AddShoppingListItem = () => {
           onChange={handleChange}
           value={newItem.quantity}
         />
-        <button type="submit">+</button>
+        <button id="btn-formsubmit" type="submit"></button>
       </form>
     </div>
   );

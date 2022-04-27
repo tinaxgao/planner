@@ -15,6 +15,7 @@ section {
   border: .5px solid #8c8c8c;
   border-radius: 25px;
   margin: 30px 20px 20px;
+  padding-bottom: 20px;
 }
 
 div {
@@ -34,6 +35,15 @@ label {
   color: #8c8c8c;
   text-transform: uppercase;
   display: flex;
+  align-items: center;
+}
+
+form {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
