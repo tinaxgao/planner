@@ -3,15 +3,28 @@
 }
 
 .App-header {
+  width: 100vw;
+  height: 47px;
+  background-color: #437897;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  border-bottom: #8c8c8c solid .5px;
+  font-size: .5rem;
+}
+
+#user-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  height: 52px;
+  background-color: #437897;
+  padding: 0 20px;
 }
 
 section {
+  background-color: #FBFDFC;
   border: .5px solid #8c8c8c;
   border-radius: 25px;
   margin: 30px 20px 20px;
