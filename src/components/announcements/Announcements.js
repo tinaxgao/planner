@@ -10,19 +10,19 @@ const Announcements = () => {
   const announcements = useSelector((state) => state.announcements);
   const announcement = announcements.announcements.map((a) => (
     <div key={a.id} className="announcement">
-      <div>
-        <div id="announce-date">{a.date}</div>
+      <div className="top-div">
+        <div id="announce-date">{a.date} News</div>
         <button onClick={() => dispatch(removeAnnouncement(a))}>x</button>
+        <img src="../../icons/X.svg" alt="close" />
+
+
+
       </div>
       <p>{a.content}</p>
     </div>
   ));
 
-  return (
-    <div>
-      {announcement}
-    </div>
-  );
+  return <div>{announcement}</div>;
 };
 
 export default Announcements;

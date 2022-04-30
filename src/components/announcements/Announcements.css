@@ -7,20 +7,28 @@
     display: flex;
     flex-wrap: wrap;
   }
-  
-  .announcement div {
-    width: 100%;
+
+  .top-div {
+    width: 90%;
+    margin: auto;
     display: flex;
+    justify-content: space-between;
   }
   
   .announcement p {
     width: 100%;
+    font-size: 1.25rem;
   }
   
   .announcement button {
+
     margin-left: auto;
+    background-color: #fff;
+    cursor: pointer;
   }
   
   #announce-date {
-    width: 70%;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .85rem;
   }

@@ -31,10 +31,6 @@ section {
   padding-bottom: 20px;
 }
 
-div {
-  /* border: 1px dashed #61dafb; */
-}
-
 /* label above each task or item */
 .toplabel {
   width: 100%;
