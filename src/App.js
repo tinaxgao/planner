@@ -13,6 +13,7 @@ function App() {
         <h4>Manager</h4>
         <h4>Employee1</h4>
         <h4>Employee2</h4>
+        <h4>Employee3</h4>
       </nav>
 
       <Announcements />

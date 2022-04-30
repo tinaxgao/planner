@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeAnnouncement } from "./announcementsSlice";
-import AddAnnouncement from "./AddAnnouncement.js";
 import "./Announcements.css";
 
 const Announcements = () => {
@@ -12,11 +11,10 @@ const Announcements = () => {
     <div key={a.id} className="announcement">
       <div className="top-div">
         <div id="announce-date">{a.date} News</div>
-        <button onClick={() => dispatch(removeAnnouncement(a))}>x</button>
-        <img src="../../icons/X.svg" alt="close" />
-
-
-
+        <div
+          className="cancel-btn"
+          onClick={() => dispatch(removeAnnouncement(a))}
+        />
       </div>
       <p>{a.content}</p>
     </div>
