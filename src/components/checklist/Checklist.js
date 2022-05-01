@@ -12,7 +12,7 @@ const Checklist = () => {
     <div key={a.id} className="task">
       <label className="toplabel">Task</label>
       <h3>{a.content}</h3>
-      <button onClick={() => dispatch(removeTask(a))}>x</button>
+      <div className="btn-checked" onClick={() => dispatch(removeTask(a))} />
     </div>
   ));
 

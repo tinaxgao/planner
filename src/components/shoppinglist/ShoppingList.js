@@ -18,7 +18,7 @@ const Checklist = () => {
         <div className="toplabel">Qty</div>
         {a.quantity}
       </div>
-      <button onClick={() => dispatch(removeItem(a))}>x</button>
+      <div className="btn-checked" onClick={() => dispatch(removeItem(a))} />
     </div>
   ));
 

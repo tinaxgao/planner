@@ -83,4 +83,16 @@ input[type="text"]:focus {
   border: none;
   cursor: pointer;
 }
+
+/* task completed button */
+.btn-checked {
+  height:24px;
+  width: 24px;
+  background-image: url(icons/Checked-Box.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}
 /* ---- end shared form stuff */
