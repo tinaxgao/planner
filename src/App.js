@@ -2,6 +2,7 @@ import "./App.css";
 import Announcements from "./components/announcements/Announcements";
 import Checklist from "./components/checklist/Checklist";
 import ShoppingList from "./components/shoppinglist/ShoppingList";
+import BottomNav from "./components/navs/BottomNav";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <h2>Shopping List</h2>
         <ShoppingList />
       </section>
+
+      <BottomNav />
     </div>
   );
 }

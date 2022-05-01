@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   margin: 0;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
@@ -25,7 +24,7 @@ code {
 h1 {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 500;
   color: #fbfdfc;
 }
 
