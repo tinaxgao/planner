@@ -4,5 +4,14 @@
   right: 0;
   bottom: 0;
   z-index: 1200;
-  border: 2px yellow solid;
+  background-color: #234f68;
+  opacity: 80%;
+  backdrop-filter: blur(6px);
+}
+
+#bottom-nav div {
+  color: #fbfdfc;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
 }

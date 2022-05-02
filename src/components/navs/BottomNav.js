@@ -1,12 +1,14 @@
 import React from "react";
-import "./Navs.css"
+import "./Navs.css";
 
 const BottomNav = () => {
   return (
     <nav id="bottom-nav">
-      Home
-      <div>Announcements Checklist Shopping List</div>
-      Settings
+      <div>
+        Home
+        <div>Announcements Checklist Shopping List</div>
+        Settings
+      </div>
     </nav>
   );
 };
