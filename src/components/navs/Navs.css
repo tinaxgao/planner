@@ -4,14 +4,26 @@
   right: 0;
   bottom: 0;
   z-index: 1200;
+  height: 60px;
   background-color: #234f68;
   opacity: 80%;
   backdrop-filter: blur(6px);
-}
-
-#bottom-nav div {
   color: #fbfdfc;
   font-size: 0.75rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.nav-group-2 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.nav-group {
+  width: min-content;
+  margin: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

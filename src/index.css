@@ -6,8 +6,9 @@
   box-sizing: border-box;
 }
 
+/* body includes bottom margin to account for bottom nav */
 body {
-  margin: 0;
+  margin: 0 0 60px 0;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

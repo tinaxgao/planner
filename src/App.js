@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Half-Peach Bakery</h1>
+        <h1>Restaurant Name</h1>
       </header>
       <nav id="user-nav">
         <h4>Manager</h4>
