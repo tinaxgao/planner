@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Mono|Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Inter|Montserrat");
 
 *,
 *::before,
@@ -8,8 +8,8 @@
 
 /* body includes bottom margin to account for bottom nav */
 body {
-  margin: 0;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  margin: 0 0 70px 0;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #234f68;
@@ -23,7 +23,7 @@ code {
 
 /* app title */
 h1 {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   color: #fbfdfc;

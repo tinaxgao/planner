@@ -6,7 +6,6 @@
 .App-header {
   width: 100%;
   height: 52px;
-  background-color: #437897;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -17,7 +16,6 @@
 #user-nav {
   width: 92%;
   height: 52px;
-  background-color: #437897;
   display: flex;
   flex-direction: row;
   align-items: center;
