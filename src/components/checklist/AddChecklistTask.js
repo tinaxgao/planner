@@ -16,8 +16,10 @@ const AddChecklistTask = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="newTask" className="formLabel">Add task</label>
-        <input type="text" id="newTask" placeholder="new task"/>
+        <label htmlFor="newTask" className="formLabel">
+          Add task
+        </label>
+        <input type="text" id="newTask" />
         <button id="btn-formsubmit" type="submit"></button>
       </form>
     </div>
