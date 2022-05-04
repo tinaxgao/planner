@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from "./shoppingListSlice";
 
 const AddShoppingListItem = () => {
-  const [newItem, setNewItem] = useState({ content: "", quantity: "" });
+  const [newItem, setNewItem] = useState({ itemName: "", quantity: "" });
   const dispatch = useDispatch();
 
   // Set new item based on input
@@ -15,26 +15,25 @@ const AddShoppingListItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addItem(newItem));
-    setNewItem({ content: "", quantity: "" });
+    setNewItem({ itemName: "", quantity: "" });
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-      <label>Add item</label>
+      <label className="formLabel">Add item</label>
         <input
           type="text"
           id="itemContent"
-          name="content"
-          placeholder="Item name"
+          name="itemName"
           onChange={handleChange}
-          value={newItem.content}
+          value={newItem.itemName}
         />
+        <label className="formLabel">Quantity</label>
         <input
           type="text"
           id="itemQty"
           name="quantity"
-          placeholder="Quantity"
           onChange={handleChange}
           value={newItem.quantity}
         />

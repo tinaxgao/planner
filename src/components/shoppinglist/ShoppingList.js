@@ -12,7 +12,7 @@ const Checklist = () => {
     <div key={a.id} className="items">
       <div id="col1">
         <div className="toplabel">Item</div>
-        {a.content}
+        {a.itemName}
       </div>
       <div id="col2">
         <div className="toplabel">Qty</div>
