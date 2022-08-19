@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   checklist: [
     {
-      id: 1,
+      id: '1',
       content: "cut cucumbers",
     },
     {
-      id: 2,
+      id: '2',
       content: "make pizza sauce",
     },
   ],
@@ -25,7 +25,7 @@ export const checklistSlice = createSlice({
     },
     removeTask: (state, action) => {
       state.checklist = state.checklist.filter(
-        (a) => a.id !== action.payload.id
+        (i) => i.id !== action.payload.id
       );
     },
   },
