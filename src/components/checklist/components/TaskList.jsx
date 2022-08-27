@@ -21,7 +21,7 @@ const TaskList = () => {
   }
   const { data } = useQuery("tasks", getData);
   const tasks = data?.list.contents || [];
-  console.log("tasks", tasks);
+  console.log("tasks", tasks); // TODO: remove console.log
 
   const handleDrop = useCallback((dropZone, item) => {
     console.log("dropZone", dropZone);

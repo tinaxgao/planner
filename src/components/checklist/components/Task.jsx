@@ -19,7 +19,7 @@ const Task = ({ task, index, path }) => {
     <div className="checklist" ref={drag} style={{ opacity }}>
       <label className="toplabel">Task</label>
       <h3>
-        id:{task.id} / content:{task.content} / index:{index}
+        id:{task._id} / content:{task.name} / index:{index}
       </h3>
       <div className="btn-checked" onClick={() => dispatch(removeTask(task))} />
     </div>
