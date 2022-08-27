@@ -2,13 +2,14 @@ import React from "react";
 import { useDrag } from "react-dnd";
 import { useDispatch } from "react-redux";
 import { removeTask } from "../checklistSlice";
-import { ITEM } from "../../constants";
+import { LISTITEM } from "../../constants";
 
-const Task = ({ task, index }) => {
+const Task = ({ task, index, path }) => {
   const dispatch = useDispatch();
 
   const [{ opacity }, drag] = useDrag({
-    type: ITEM,
+    type: LISTITEM,
+    item: { id: task.id, path },
     collect: (monitor) => ({
       opacity: monitor.isDragging() ? 0.2 : 1,
     }),

@@ -1,2 +1,3 @@
-export const LIST = "LIST";
-export const ITEM = "ITEM";
+export const LIST = "list";
+export const SUBLIST = "subList";
+export const LISTITEM = "listItem";

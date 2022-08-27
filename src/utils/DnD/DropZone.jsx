@@ -1,11 +1,11 @@
 import React from "react";
 import classNames from "classnames";
 import { useDrop } from "react-dnd";
-import { LIST, ITEM } from "../../components/constants";
+import { LIST, LISTITEM } from "../../components/constants";
 
-const ACCEPTS = [LIST, ITEM];
+const ACCEPTS = [LIST, LISTITEM];
 
-const DropZone = ({ data, onDrop, isLast }) => {
+const DropZone = ({ data, onDrop, isLast, className }) => {
   const [{ isOver, canDrop }, drop] = useDrop({
     accept: ACCEPTS,
     drop: (item, monitor) => {
