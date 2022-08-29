@@ -6,11 +6,9 @@ import DropZone from "../../../utils/DnD/DropZone";
 import { LISTITEM, LIST } from "../../constants";
 
 const TaskList = () => {
-  // const tasks = useSelector((state) => state.checklist);
-
   /* GET TASKS FROM TASKLIST */
   const tasklistId = "630802099c96df23984b9e1b";
-  async function getData() {
+  async function getTasks() {
     const response = await fetch(
       `http://localhost:9000/tasklists/${tasklistId}`
     );
@@ -19,7 +17,7 @@ const TaskList = () => {
     }
     return await response.json();
   }
-  const { data } = useQuery("tasks", getData);
+  const { data } = useQuery("tasks", getTasks);
   const tasks = data?.list.contents || [];
   console.log("tasks", tasks); // TODO: remove console.log
 

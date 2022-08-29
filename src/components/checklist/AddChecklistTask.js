@@ -1,26 +1,60 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { useQueryClient, useMutation } from "react-query";
+import { useForm } from "react-hook-form";
 import "./Checklist.css";
-import { useDispatch } from "react-redux";
-import { addTask } from "./checklistSlice";
+
+/* ADD TASK TO TASKLIST */
+const tasklistId = "630802099c96df23984b9e1b";
+async function addNewTask(content) {
+  console.log("addnewtask content:", content); // TODO delete console.log
+  // POST the content to `http://localhost:9000/tasklists/${tasklistId}/add`
+  const response = await fetch(
+    `http://localhost:9000/tasklists/${tasklistId}/add`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(content),
+    }
+  );
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  return await response.json();
+}
 
 const AddChecklistTask = () => {
-  const dispatch = useDispatch();
+  const { register, handleSubmit, resetField } = useForm();
+
+  const queryClient = useQueryClient();
+  const { mutate, isLoading } = useMutation((data) => addNewTask(data), {
+    onSuccess: (data) => {
+      console.log(data);
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries("tasks");
+    },
+  });
 
   // Add new task from form
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(addTask(document.getElementById("newTask").value));
-    document.getElementById("newTask").value = "";
+  const onSubmit = (data) => {
+    data.type = "listItem";
+    console.log("data in add task", data); // TODO delete console.log
+    mutate(data);
+    resetField("name");
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="newTask" className="formLabel">
           Add task
         </label>
-        <input type="text" id="newTask" />
+        <input {...register("name")} type="text" id="newTask" />
         <button id="btn-formsubmit" type="submit"></button>
       </form>
     </div>
