@@ -2,14 +2,12 @@ import React from "react";
 import { useQueryClient, useMutation } from "react-query";
 import { useForm } from "react-hook-form";
 import "./Checklist.css";
+import { DB_MAIN_CHECKLIST_ID } from "../constants";
 
 /* ADD TASK TO TASKLIST */
-const tasklistId = "630802099c96df23984b9e1b";
 async function addNewTask(content) {
-  console.log("addnewtask content:", content); // TODO delete console.log
-  // POST the content to `http://localhost:9000/tasklists/${tasklistId}/add`
   const response = await fetch(
-    `http://localhost:9000/tasklists/${tasklistId}/add`,
+    `http://localhost:9000/tasklists/${DB_MAIN_CHECKLIST_ID}/add`,
     {
       method: "POST",
       headers: {
@@ -30,20 +28,18 @@ const AddChecklistTask = () => {
   const queryClient = useQueryClient();
   const { mutate, isLoading } = useMutation((data) => addNewTask(data), {
     onSuccess: (data) => {
-      console.log(data);
+      console.log("addChecklistTask success:", data); // TODO: remove these
     },
     onError: (error) => {
-      console.log(error);
+      console.log("addChecklsitTask error:", error);
     },
     onSettled: () => {
       queryClient.invalidateQueries("tasks");
     },
   });
 
-  // Add new task from form
   const onSubmit = (data) => {
     data.type = "listItem";
-    console.log("data in add task", data); // TODO delete console.log
     mutate(data);
     resetField("name");
   };

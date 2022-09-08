@@ -1,15 +1,32 @@
 import React from "react";
 import { useDrag } from "react-dnd";
-import { useDispatch } from "react-redux";
-import { removeTask } from "../checklistSlice";
-import { LISTITEM } from "../../constants";
+import { useQueryClient, useMutation } from "react-query";
+import { LISTITEM, DB_MAIN_CHECKLIST_ID } from "../../constants";
 
-const Task = ({ task, index, path }) => {
-  const dispatch = useDispatch();
+async function markTaskDone(task) {
+  const response = await fetch(
+    `http://localhost:9000/tasklists/${DB_MAIN_CHECKLIST_ID}/done`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ _id: task, done: true }),
+    }
+  );
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  return await response.json();
+}
+
+const Task = ({ task }) => {
+  console.log("Task task prop:", task); // TODO: remove this
+  const { mutate } = useMutation((data) => markTaskDone(data));
 
   const [{ opacity }, drag] = useDrag({
     type: LISTITEM,
-    item: { id: task.id, path },
+    item: { id: task.id },
     collect: (monitor) => ({
       opacity: monitor.isDragging() ? 0.2 : 1,
     }),
@@ -18,10 +35,8 @@ const Task = ({ task, index, path }) => {
   return (
     <div className="checklist" ref={drag} style={{ opacity }}>
       <label className="toplabel">Task</label>
-      <h3>
-        {task.name} | index:{index}
-      </h3>
-      <div className="btn-checked" onClick={() => dispatch(removeTask(task))} />
+      <h3>{task.name}</h3>
+      <div className="btn-checked" onClick={() => mutate(task._id)} />
     </div>
   );
 };

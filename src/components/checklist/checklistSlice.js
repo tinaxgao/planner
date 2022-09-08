@@ -8,23 +8,16 @@ const initialState = {
       id: "1",
       content: "cut cucumbers",
     },
-    {
-      type: LISTITEM,
-      id: "2",
-      content: "make pizza sauce",
-    },
   ],
 };
 
-// fetch tasks from MongoDB and store in state
+const tasklistId = "630802099c96df23984b9e1b";
 
 export const checklistSlice = createSlice({
   name: "checklist",
   initialState,
   reducers: {
     addTask: (state, action) => {
-      // add action.payload to MongoDB and update state
-
       state.checklist.push({
         type: LISTITEM,
         id: state.checklist.length + 1,

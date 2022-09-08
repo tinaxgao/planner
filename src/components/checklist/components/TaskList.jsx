@@ -1,25 +1,22 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { useQuery } from "react-query";
-import { useSelector } from "react-redux";
 import Task from "./Task";
 import DropZone from "../../../utils/DnD/DropZone";
-import { LISTITEM, LIST } from "../../constants";
+import { DB_MAIN_CHECKLIST_ID } from "../../constants";
+
+async function getTasks() {
+  const response = await fetch(
+    `http://localhost:9000/tasklists/${DB_MAIN_CHECKLIST_ID}`
+  );
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  return await response.json();
+}
 
 const TaskList = () => {
-  /* GET TASKS FROM TASKLIST */
-  const tasklistId = "630802099c96df23984b9e1b";
-  async function getTasks() {
-    const response = await fetch(
-      `http://localhost:9000/tasklists/${tasklistId}`
-    );
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-    return await response.json();
-  }
   const { data } = useQuery("tasks", getTasks);
   const tasks = data?.list.contents || [];
-  console.log("tasks", tasks); // TODO: remove console.log
 
   const handleDrop = useCallback((dropZone, item) => {
     console.log("dropZone", dropZone);
@@ -28,24 +25,28 @@ const TaskList = () => {
 
   return (
     <>
-      {tasks.map((i, index) => {
+      {tasks.map((task, index) => {
         const currentPath = `${index}`;
 
-        return (
-          <React.Fragment key={i.id}>
-            <DropZone
-              data={{ path: `${index}-0` }}
-              onDrop={handleDrop}
-              path={currentPath}
-            />
-            <Task task={i} index={index} />
-            <DropZone
-              data={{ path: `${index}-1` }}
-              onDrop={handleDrop}
-              path={currentPath}
-            />
-          </React.Fragment>
-        );
+        if (!task.done) {
+          return (
+            <React.Fragment key={index}>
+              <DropZone
+                data={{ path: `${index}-0` }}
+                onDrop={handleDrop}
+                path={currentPath}
+              />
+              <Task task={task} key={index} />
+              <DropZone
+                data={{ path: `${index}-1` }}
+                onDrop={handleDrop}
+                path={currentPath}
+              />
+            </React.Fragment>
+          );
+        } else {
+          return null;
+        }
       })}
     </>
   );
