@@ -11,8 +11,6 @@ const initialState = {
   ],
 };
 
-const tasklistId = "630802099c96df23984b9e1b";
-
 export const checklistSlice = createSlice({
   name: "checklist",
   initialState,

@@ -2,12 +2,12 @@ import React from "react";
 import { useQueryClient, useMutation } from "react-query";
 import { useForm } from "react-hook-form";
 import "./Checklist.css";
-import { DB_MAIN_CHECKLIST_ID } from "../constants";
+import { DB_MAIN_CHECKLIST_ID, DB_BASE_URI } from "../constants";
 
 /* ADD TASK TO TASKLIST */
 async function addNewTask(content) {
   const response = await fetch(
-    `http://localhost:9000/tasklists/${DB_MAIN_CHECKLIST_ID}/add`,
+    `${DB_BASE_URI}/tasklists/${DB_MAIN_CHECKLIST_ID}/add`,
     {
       method: "POST",
       headers: {

@@ -1,11 +1,11 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 import { useQueryClient, useMutation } from "react-query";
-import { LISTITEM, DB_MAIN_CHECKLIST_ID } from "../../constants";
+import { LISTITEM, DB_MAIN_CHECKLIST_ID, DB_BASE_URI } from "../../constants";
 
 async function markTaskDone(task) {
   const response = await fetch(
-    `http://localhost:9000/tasklists/${DB_MAIN_CHECKLIST_ID}/done`,
+    `${DB_BASE_URI}/tasklists/${DB_MAIN_CHECKLIST_ID}/done`,
     {
       method: "PATCH",
       headers: {

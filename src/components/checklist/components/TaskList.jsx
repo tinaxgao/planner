@@ -2,11 +2,11 @@ import React, { useCallback } from "react";
 import { useQuery } from "react-query";
 import Task from "./Task";
 import DropZone from "../../../utils/DnD/DropZone";
-import { DB_MAIN_CHECKLIST_ID } from "../../constants";
+import { DB_MAIN_CHECKLIST_ID, DB_BASE_URI } from "../../constants";
 
 async function getTasks() {
   const response = await fetch(
-    `http://localhost:9000/tasklists/${DB_MAIN_CHECKLIST_ID}`
+    `${DB_BASE_URI}/tasklists/${DB_MAIN_CHECKLIST_ID}`
   );
   if (!response.ok) {
     throw new Error(response.statusText);
