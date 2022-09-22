@@ -98,7 +98,7 @@ input[type="text"]:focus {
 /* DropZone start */
 .dropZone {
   flex: 0 0 auto;
-  height: 40px;
+  height: 10px;
   transition: 200ms all;
 }
 

@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import "./Checklist.css";
 import { DB_MAIN_CHECKLIST_ID, DB_BASE_URI } from "../constants";
 
-/* ADD TASK TO TASKLIST */
 async function addNewTask(content) {
   const response = await fetch(
     `${DB_BASE_URI}/tasklists/${DB_MAIN_CHECKLIST_ID}/add`,
@@ -26,13 +25,7 @@ const AddChecklistTask = () => {
   const { register, handleSubmit, resetField } = useForm();
 
   const queryClient = useQueryClient();
-  const { mutate, isLoading } = useMutation((data) => addNewTask(data), {
-    onSuccess: (data) => {
-      console.log("addChecklistTask success:", data); // TODO: remove these
-    },
-    onError: (error) => {
-      console.log("addChecklsitTask error:", error);
-    },
+  const { mutate } = useMutation((data) => addNewTask(data), {
     onSettled: () => {
       queryClient.invalidateQueries("tasks");
     },

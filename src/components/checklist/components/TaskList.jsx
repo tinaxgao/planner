@@ -1,47 +1,50 @@
-import React, { useCallback } from "react";
+import React from "react";
+import { SortableContainer } from "react-sortable-hoc";
 import { useQuery } from "react-query";
 import Task from "./Task";
-import DropZone from "../../../utils/DnD/DropZone";
 import { DB_MAIN_CHECKLIST_ID, DB_BASE_URI } from "../../constants";
 
-async function getTasks() {
-  const response = await fetch(
-    `${DB_BASE_URI}/tasklists/${DB_MAIN_CHECKLIST_ID}`
-  );
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  return await response.json();
-}
+// async function getTasks() {
+//   const response = await fetch(
+//     `${DB_BASE_URI}/tasklists/${DB_MAIN_CHECKLIST_ID}`
+//   );
+//   if (!response.ok) {
+//     throw new Error(response.statusText);
+//   }
+//   return await response.json();
+// }
 
-const TaskList = () => {
-  const { data } = useQuery("tasks", getTasks);
-  const tasks = data?.list.contents || [];
+const TaskList = SortableContainer(({tasks}) => {
+  // const { data } = useQuery("tasks", getTasks);
+  // const tasks = data?.list.contents || [];
 
-  const handleDrop = useCallback((dropZone, item) => {
-    console.log("dropZone", dropZone);
-    console.log("item", item);
-  }, []);
+  // const handleDrop = ([dropZone, item]) => {
+  //   console.log("dropZone", dropZone);
+  //   console.log("item", item);
+  // };
 
   return (
     <>
       {tasks.map((task, index) => {
-        const currentPath = `${index}`;
+        // const currentPath = `${index}`;
 
         if (!task.done) {
           return (
             <React.Fragment key={index}>
-              <DropZone
-                data={{ path: `${index}-0` }}
+              {/* <DropZone
+                key={`${index}-0`}
+                data={`${index}-0`}
+                path={0}
                 onDrop={handleDrop}
+                isFirst={true} 
+              />*/}
+              <Task task={task} key={index} index={index} />
+              {/* <DropZone
+                key={`${index}-1`}
+                data={`${index}-1`}
                 path={currentPath}
-              />
-              <Task task={task} key={index} />
-              <DropZone
-                data={{ path: `${index}-1` }}
                 onDrop={handleDrop}
-                path={currentPath}
-              />
+              /> */}
             </React.Fragment>
           );
         } else {
@@ -50,6 +53,6 @@ const TaskList = () => {
       })}
     </>
   );
-};
+});
 
 export default TaskList;
